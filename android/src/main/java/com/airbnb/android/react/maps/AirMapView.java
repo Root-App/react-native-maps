@@ -310,6 +310,10 @@ public class AirMapView extends MapView implements GoogleMap.InfoWindowAdapter,
         }
     }
 
+    public void setCustomPadding(ReadableMap customPadding) {
+      map.setPadding(customPadding.getInt("left"), customPadding.getInt("top"), customPadding.getInt("right"), customPadding.getInt("bottom"));
+    }
+
     public void setShowsUserLocation(boolean showUserLocation) {
         this.showUserLocation = showUserLocation; // hold onto this for lifecycle handling
         if (hasPermissions()) {

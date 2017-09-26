@@ -70,6 +70,14 @@ const propTypes = {
   customMapStyle: PropTypes.array,
 
   /**
+   * A json object that describes the padding for controls, logo, etc of the map
+   *
+   * https://developers.google.com/maps/documentation/ios-sdk/map
+   * https://developers.google.com/maps/documentation/android-api/map#map_padding
+   */
+  customPadding: EdgeInsetsPropType,
+
+  /**
    * A json string that describes the style of the map
    * https://developers.google.com/maps/documentation/ios-sdk/styling#use_a_string_resource
    * https://developers.google.com/maps/documentation/android-api/styling
