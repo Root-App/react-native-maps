@@ -83,6 +83,11 @@ public class AirMapManager extends ViewGroupManager<AirMapView> {
                 .emit("onError", error);
     }
 
+    @ReactProp(name = "customPadding")
+    public void setCustomPadding(AirMapView view, ReadableMap customPadding) {
+      view.setPadding(customPadding.getInt("left"), customPadding.getInt("top"), customPadding.getInt("right"), customPadding.getInt("bottom"));
+    }
+
     @ReactProp(name = "region")
     public void setRegion(AirMapView view, ReadableMap region) {
         view.setRegion(region);
@@ -93,7 +98,7 @@ public class AirMapManager extends ViewGroupManager<AirMapView> {
         int typeId = MAP_TYPES.get(mapType);
         view.map.setMapType(typeId);
     }
-    
+
     @ReactProp(name = "customMapStyleString")
     public void setMapStyle(AirMapView view, @Nullable String customMapStyleString) {
         view.map.setMapStyle(new MapStyleOptions(customMapStyleString));
